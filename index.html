@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    
+    <!-- Bootstrap core CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Gallery</title>
+
+    <style>
+    @font-face { font-family: RitzyNormal; src: url('RitzyNormal.ttf'); } </style>
+    
+   
+  </head>
+
+  <body>
+
+    <div class="container">
+    <div class="row">
+
+<img src="images/one.jpg" style="cursor:pointer"
+             onclick="showImage(this.src, 'images/one.jpg');" class="img-circle"/>
+<img src="images/two.jpg" style="cursor:pointer"
+             onclick="showImage(this.src, 'images/two.jpg');" class="img-circle"/>
+<img src="images/three.jpg" style="cursor:pointer"
+             onclick="showImage(this.src, 'images/three.jpg');" class="img-circle"/>
+    </div>
+ <h1>Click & Join the Circus</h1>
+    <div class="row">
+<img src="images/four.jpg" style="cursor:pointer"
+             onclick="showImage(this.src, 'images/four.jpg');" class="img-circle"/>
+<img src="images/five.jpg" style="cursor:pointer"
+             onclick="showImage(this.src, 'images/five.jpg');" class="img-circle"/>
+<img src="images/six.jpg" style="cursor:pointer"
+             onclick="showImage(this.src, 'images/six.jpg');" class="img-circle"/>
+    </div>      
+</div>
+
+        <div id="largeImgPanel" onclick="this.style.display='none'">
+            <img id="largeImg"
+                 style="height:100%; margin:0; padding:0;" />
+        </div>
+
+</div>
+
+ <script type="text/javascript">
+            function showImage(smSrc, lgSrc) {
+                document.getElementById('largeImg').src = smSrc;
+                showLargeImagePanel();
+                unselectAll();
+                setTimeout(function() {
+                    document.getElementById('largeImg').src = lgSrc;
+                }, 1)
+            }
+            function showLargeImagePanel() {
+                document.getElementById('largeImgPanel').style.display = 'block';
+            }
+            function unselectAll() {
+                if(document.selection)
+                    document.selection.empty();
+                if(window.getSelection)
+                    window.getSelection().removeAllRanges();
+            }
+        </script>
+  
+
+
+  
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+  </body>
+</html>
